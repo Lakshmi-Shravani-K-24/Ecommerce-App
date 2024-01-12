@@ -49,7 +49,7 @@ const CartPage = () => {
   const getToken = async () => {
     try {
       const { data } = await axios.get(
-        "https://ecommerceapplication-s09v.onrender.com/api/v1/product/braintree/token"
+        "https://apiecommerce-o1mf.onrender.com/api/v1/product/braintree/token"
       );
       setClientToken(data?.clientToken);
     } catch (error) {
@@ -108,7 +108,7 @@ const CartPage = () => {
                 <div className="row card flex-row" key={p._id}>
                   <div className="col-md-4">
                     <img
-                      src={`https://ecommerceapplication-s09v.onrender.com/api/v1/product/product-photo/${p._id}`}
+                      src={`https://apiecommerce-o1mf.onrender.com/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                       width="100%"

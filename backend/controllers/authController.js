@@ -65,8 +65,8 @@ export const registerController = async (req, res) => {
 //POST LOGIN
 export const loginController = async (req, res) => {
   try {
+    console.log("here");
     const { email, password } = req.body;
-    //validation
     if (!email || !password) {
       return res.status(404).send({
         success: false,
@@ -90,7 +90,7 @@ export const loginController = async (req, res) => {
     }
     //token
     const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7d",
+      expiresIn: "30d",
     });
     res.status(200).send({
       success: true,
